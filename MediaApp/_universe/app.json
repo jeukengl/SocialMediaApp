@@ -1,7 +1,7 @@
 {
   expo: {
-    name: "My New Project",
-    description: "No description",
+    name: "Circa",
+    description: "The best way for people nearby to connect",
     slug: "my-new-project",
     privacy: "unlisted",
     sdkVersion: "UNVERSIONED",

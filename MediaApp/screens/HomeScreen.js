@@ -16,6 +16,7 @@ import {
     RkAvoidKeyboard, RkStyleSheet
 } from 'react-native-ui-kitten';
 
+import {RkTheme} from 'react-native-ui-kitten';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
@@ -43,7 +44,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
+            <Text style={styles.getStartedText}>This will be the sign-up Page</Text>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
