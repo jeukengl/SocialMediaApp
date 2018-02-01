@@ -59,7 +59,7 @@ export default class Login extends React.Component {
                 <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
 
                     <View style = {styles.container}>
-                        <Text style = {styles.header}> - LOGIN into Circa -</Text>
+                        <Text style = {styles.header}> - Log-In with Your Email-</Text>
 
                         <TextInput
                             style = {styles.textInput} placeholder = 'Email'

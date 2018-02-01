@@ -17,6 +17,7 @@ import WalkThrough2 from './screens/walkthrough/WalkThrough2';
 import { StackNavigator } from 'react-navigation';
 import {Walkthrough} from "./components/Walkthrough";
 import {PaginationIndicator} from "./components/PaginationIndicator";
+import WalkThrough3 from "./screens/walkthrough/WalkThrough3";
 //import WalkThroughScreen from "./screens/walkthrough/WalkThroughScreen";
 
 
@@ -42,8 +43,9 @@ export class WalkThroughScreen extends React.Component {
                 <Walkthrough onChanged={(index) => this.changeIndex(index)}>
                     <WalkThrough1/>
                     <WalkThrough2/>
+                    <WalkThrough3/>
                 </Walkthrough>
-                <PaginationIndicator length={2} current={this.state.index}/>
+                <PaginationIndicator length={3} current={this.state.index}/>
 
                 <Button
                     rkType='large'

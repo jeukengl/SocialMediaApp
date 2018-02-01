@@ -20,14 +20,14 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { StackNavigator } from 'react-navigation';
 
-export default class WalkThrough2 extends React.Component {
+export default class WalkThrough3 extends React.Component {
 
 
     render() {
         return(
 
             <View style={styles.screen}>
-                <RkText rkType='header1' style={styles.text}>Find People Near You</RkText>
+                <RkText rkType='header1' style={styles.text}>Make New Friends!</RkText>
             </View>
 
 
