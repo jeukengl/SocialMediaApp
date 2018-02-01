@@ -11,6 +11,12 @@ import {
     TouchableOpacity,
     AsyncStorage,
     } from 'react-native';
+import {
+    RkText,
+    RkStyleSheet,
+    RkTheme
+} from 'react-native-ui-kitten';
+
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -58,8 +64,8 @@ export default class Login extends React.Component {
 
                 <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
 
-                    <View style = {styles.container}>
-                        <Text style = {styles.header}> - Log-In with Your Email-</Text>
+                    <View style = {styles.screen}>
+                        <RkText rkType='header1' style={styles.text}>  Log-In with Your Email </RkText>
 
                         <TextInput
                             style = {styles.textInput} placeholder = 'Email'
@@ -105,7 +111,7 @@ export default class Login extends React.Component {
     }
 
 }
-const styles = StyleSheet.create({
+let styles = RkStyleSheet.create(theme => ({
 
     wrapper: {
         flex: 1,
@@ -135,6 +141,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#01c853',
         padding:20,
         alignItems: 'center',
+    }, screen: {
+        backgroundColor: theme.colors.screen.base,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
+    text: {
+        marginTop: 20,
+        fontSize: 30,
     }
-});
+}));
 

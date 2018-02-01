@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-    Button,
-    View
+    Button, Dimensions, StyleSheet,
+    View, FlatList
 } from 'react-native';
 import {RkStyleSheet} from 'react-native-ui-kitten';
 
@@ -10,18 +10,15 @@ import Login from './components/Login';
 import Profile from './components/Home';
 import WalkThrough1 from './screens/walkthrough/WalkThrough1';
 import WalkThrough2 from './screens/walkthrough/WalkThrough2';
-//import PaginationIndicator from 'MediaApp/components/PaginationIndicator.js';
-
-
-
 import { StackNavigator } from 'react-navigation';
 import {Walkthrough} from "./components/Walkthrough";
 import {PaginationIndicator} from "./components/PaginationIndicator";
 import WalkThrough3 from "./screens/walkthrough/WalkThrough3";
-//import WalkThroughScreen from "./screens/walkthrough/WalkThroughScreen";
 
 
 
+
+//This is the first page of the application. Walkthrough the steps of use.
 
 export class WalkThroughScreen extends React.Component {
     static navigationOptions = {
@@ -41,12 +38,12 @@ export class WalkThroughScreen extends React.Component {
         return (
             <View style={styles.screen}>
                 <Walkthrough onChanged={(index) => this.changeIndex(index)}>
+
                     <WalkThrough1/>
                     <WalkThrough2/>
                     <WalkThrough3/>
                 </Walkthrough>
                 <PaginationIndicator length={3} current={this.state.index}/>
-
                 <Button
                     rkType='large'
                     title= 'GET STARTED'
@@ -60,6 +57,7 @@ export class WalkThroughScreen extends React.Component {
         )
     }
 }
+//End Walk through
 
 let styles = RkStyleSheet.create(theme => ({
     screen: {
@@ -73,9 +71,12 @@ let styles = RkStyleSheet.create(theme => ({
         marginHorizontal: 16,
     }
 }));
+//End walk through style
+
+
 
 const Application = StackNavigator({
-    //The home screen is the name of the import in this case 'WalkThrough1
+    //The home screen is the name of the import in this case 'WalkThroughScreen'
 
     Home: {
         screen: WalkThroughScreen,
