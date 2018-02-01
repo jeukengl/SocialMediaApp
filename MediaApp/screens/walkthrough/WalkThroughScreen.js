@@ -10,7 +10,7 @@ import {WalkThrough2} from './WalkThrough2';
 //import {PaginationIndicator} from 'MediaApp/components/PaginationIndicator';
 
 
-export class WalkthroughScreen extends React.Component {
+export class WalkThroughScreen extends React.Component {
     static navigationOptions = {
         header: null,
     };
@@ -28,17 +28,20 @@ export class WalkthroughScreen extends React.Component {
         return (
             <View style={styles.screen}>
                 <Walkthrough onChanged={(index) => this.changeIndex(index)}>
-                    <Walkthrough1/>
-                    <Walkthrough2/>
+                    <WalkThrough1/>
+                    <WalkThrough2/>
                 </Walkthrough>
                 <PaginationIndicator length={2} current={this.state.index}/>
+
                 <Button
                     rkType='large'
+                    title= 'GET STARTED'
                     style={styles.button}
-                    text="GET STARTED"
                     onPress={() => {
                         this.props.navigation.goBack()
-                    }}/>
+                    }}
+                    text="GET STARTED">
+                </Button>
             </View>
         )
     }
