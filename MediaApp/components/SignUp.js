@@ -10,7 +10,7 @@ import {
     KeyboardAvoidingView,
     TouchableOpacity,
     AsyncStorage,
-    } from 'react-native';
+} from 'react-native';
 import {
     RkText,
     RkStyleSheet,
@@ -20,16 +20,6 @@ import {
 
 import { Ionicons } from '@expo/vector-icons';
 
-// Initialize Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyDoBfb5gpJesZJ8gs2_YXAeEpbSNzcMAG0",
-    authDomain: "app1-a907a.firebaseapp.com",
-    databaseURL: "https://app1-a907a.firebaseio.com",
-    projectId: "app1-a907a",
-    storageBucket: "app1-a907a.appspot.com",
-    messagingSenderId: "216353080174"
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 
 export default class Login extends React.Component {
@@ -62,38 +52,32 @@ export default class Login extends React.Component {
         return(
 
 
-                <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
+            <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
 
-                    <View style = {styles.screen}>
-                        <RkText rkType='header1' style={styles.text}>  Log-In with Your Email </RkText>
+                <View style = {styles.screen}>
+                    <RkText rkType='header1' style={styles.text}>  Sign-Up with Your Email </RkText>
 
-                        <TextInput
-                            style = {styles.textInput} placeholder = 'Email'
-                            onChangeText={(email) => this.setState({email})}
-                            underlineColorAndroid= 'transparent'
-                            />
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Email'
+                        onChangeText={(email) => this.setState({email})}
+                        underlineColorAndroid= 'transparent'
+                    />
 
-                        <TextInput
-                            style = {styles.textInput} placeholder = 'Password'
-                            onChangeText={(password) => this.setState({password})}
-                            underlineColorAndroid= 'transparent'
-                        />
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Password'
+                        onChangeText={(password) => this.setState({password})}
+                        underlineColorAndroid= 'transparent'
+                    />
 
-                        <TouchableOpacity
-                            style = {styles.btn}
-                            onPress={this.login}>
-                        <Text> Log In </Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                            style = {styles.signup}
-                            onPress={this.signup}>
-                            <Text> Sign Up </Text>
-                        </TouchableOpacity>
+                    <TouchableOpacity
+                        style = {styles.signup}
+                        onPress={this.signup}>
+                        <Text> Sign Up </Text>
+                    </TouchableOpacity>
 
 
-                    </View>
-                </KeyboardAvoidingView>
+                </View>
+            </KeyboardAvoidingView>
 
         );
     }
@@ -102,23 +86,19 @@ export default class Login extends React.Component {
 
 
 
-    login = () => {
+    signup = () => {
         this.setState({ error: '', loading: true });
 
         const { email, password } = this.state;
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
                 this.props.navigation.navigate('Profile')
             })
             .catch(() => {
                 //Login was not successful, let's create a new account
-                alert('Login was not successful :(')
+                alert('Sign Up was not successful :(')
 
             });
-    };
-
-    signup = () => {
-                this.props.navigation.navigate('SignUp');
     };
 
 

@@ -14,6 +14,7 @@ import { StackNavigator } from 'react-navigation';
 import {Walkthrough} from "./components/Walkthrough";
 import {PaginationIndicator} from "./components/PaginationIndicator";
 import WalkThrough3 from "./screens/walkthrough/WalkThrough3";
+import SignUp from "./components/SignUp.js";
 
 
 
@@ -85,6 +86,7 @@ const Application = StackNavigator({
     Profile: {screen:Profile},
     //WalkThrough1: {screen: WalkThrough1},
     WalkThrough2: {screen: WalkThrough2},
+    SignUp: {screen:SignUp},
 
 }, {
    navigationOptions: {
