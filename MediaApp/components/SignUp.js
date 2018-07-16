@@ -10,6 +10,8 @@ import {
     KeyboardAvoidingView,
     TouchableOpacity,
     AsyncStorage,
+    Picker,
+    ScrollView
 } from 'react-native';
 import {
     RkText,
@@ -23,12 +25,17 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 export default class Login extends React.Component {
-
+//defined the state of variables
     constructor(props){
         super(props);
         this.state ={
             email: ' ',
             password: ' ',
+            firstName: ' ',
+            lastName: ' ',
+            age: ' ',
+            gender: ' ',
+            phoneNumber: ' ',
             error:' ',
             loading: false
         };
@@ -53,6 +60,7 @@ export default class Login extends React.Component {
 
 
             <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
+                <ScrollView>
 
                 <View style = {styles.screen}>
                     <RkText rkType='header1' style={styles.text}>  Sign-Up with Your Email </RkText>
@@ -69,6 +77,36 @@ export default class Login extends React.Component {
                         underlineColorAndroid= 'transparent'
                     />
 
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Enter your first name'
+                        onChangeText={(firstName) => this.setState({firstName})}
+                        underlineColorAndroid= 'transparent'
+                    />
+
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Enter your last name'
+                        onChangeText={(lastName) => this.setState({lastName})}
+                        underlineColorAndroid= 'transparent'
+                    />
+
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Enter your age'
+                        onChangeText={(age) => this.setState({age})}
+                        underlineColorAndroid= 'transparent'
+                    />
+
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Enter your gender'
+                        onChangeText={(gender) => this.setState({gender})}
+                        underlineColorAndroid= 'transparent'
+                    />
+
+                    <TextInput
+                        style = {styles.textInput} placeholder = 'Enter your phone number'
+                        onChangeText={(phoneNumber) => this.setState({phoneNumber})}
+                        underlineColorAndroid= 'transparent'
+                    />
+
                     <TouchableOpacity
                         style = {styles.signup}
                         onPress={this.signup}>
@@ -76,7 +114,9 @@ export default class Login extends React.Component {
                     </TouchableOpacity>
 
 
+
                 </View>
+                </ScrollView>
             </KeyboardAvoidingView>
 
         );
@@ -148,7 +188,7 @@ let styles = RkStyleSheet.create(theme => ({
         alignSelf:'stretch',
         backgroundColor: '#778899',
         padding:20,
-        alignItems: 'center',
+        alignItems: 'center'
     }
 }));
 
